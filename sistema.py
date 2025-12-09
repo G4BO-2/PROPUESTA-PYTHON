@@ -11,8 +11,10 @@ clientes = [
 
 # Menu de consulta al analista 
 
-def menuConsulta(personal):
-    print(f"Bienvenido a la consulta {personal}")
+def menuConsulta():
+    print("------------------------------------------")
+    print("      SISTEMA DE CRÉDITOS CASHBANK        ")
+    print("------------------------------------------")
 
     cliente = consultarDNI()
 
@@ -66,9 +68,10 @@ def consultarDNI():
 def calcularHistorial(cliente):
     print(f"funciona {cliente['DNI']} {cliente['nombre']}")
 
+
 #Funcion para imprimir la clasificacion (puede modificarse)
 def imprimirClasificacion(cliente):
     print(f"funciona {cliente['DNI']} {cliente['nombre']}")
 
 
-menuConsulta("Gabriel")
+menuConsulta()
