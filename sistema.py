@@ -75,7 +75,7 @@ def calculoFinal(cliente):
         estado = "APROBADO CON RIESGO"
         nivel = "Endeudamiento moderado"
     elif ratio < 1.0:
-        estado = "REVISIÓN MANUAL"
+        estado = "REVISIÓN"
         nivel = "Endeudamiento alto"
     else:
         estado = "RECHAZADO"
