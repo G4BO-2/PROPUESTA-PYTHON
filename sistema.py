@@ -83,15 +83,12 @@ def calculoFinal(cliente):
 
 #Funcion para calcular el historial crediticio (puede moficarse)
 def calificacionFinal(cliente, ratio, endeudamiento_total, estado, nivel):
-    print("--------------------------------")
     print(f"DNI: {cliente['DNI']}")
     print(f"Nombre: {cliente['nombre']}")
     print(f"Deuda total: {endeudamiento_total}")
     print(f"Ratio deuda/ingreso: {ratio:.2f}")
     print(f"Estado: {estado}")
     print(f"Nivel: {nivel}")
-    print("--------------------------------")
-
 
 
 menuConsulta()
