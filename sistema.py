@@ -1,12 +1,12 @@
 # Lista de clientes a evaluar (BD)
 
 clientes = [
-    {"DNI": "12345678", "nombre": "Ana Pérez", "historial": "Bueno", "clasificacion": "A"},
-    {"DNI": "87654321", "nombre": "Juan Torres", "historial": "Regular", "clasificacion": "B"},
-    {"DNI": "11112222", "nombre": "María López", "historial": "Malo", "clasificacion": "C"},
-    {"DNI": "11112223", "nombre": "Ximena López", "historial": "Malo", "clasificacion": "C"}
+    {"DNI": "12345678", "nombre": "Ana Pérez", "deudas": [200, 300, 150], "ingreso": 1500},
     
 ]
+
+#PRUEBA DE DEUDAS Y ENTRADAS
+
 
 
 # Menu de consulta al analista 
