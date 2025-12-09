@@ -28,7 +28,8 @@ def menuConsulta():
         opcion = input("Elige una opción (en numero): ")
 
         if opcion == "1":
-            calificacionFinal(cliente)
+            ratio, endeudamiento_total, estado, nivel = calculoFinal(cliente)
+            calificacionFinal(cliente, ratio, endeudamiento_total, estado, nivel)
         elif opcion == "2":
             cliente = consultarDNI()
         elif opcion == "3" or opcion.lower() == "salir":
@@ -61,12 +62,35 @@ def consultarDNI():
 
 
 #PRUEBA DE DEUDAS Y ENTRADAS
-def calculo ()
+def calculoFinal(cliente):
+    endeudamiento_total = sum(cliente["deudas"])
+    ratio = endeudamiento_total / cliente["ingreso"]
+    if ratio < 0.40:
+        estado = "APROBADO"
+        nivel = "Bajo endeudamiento"
+    elif ratio < 0.80:
+        estado = "APROBADO CON RIESGO"
+        nivel = "Endeudamiento moderado"
+    elif ratio < 1.0:
+        estado = "REVISIÓN MANUAL"
+        nivel = "Endeudamiento alto"
+    else:
+        estado = "RECHAZADO"
+        nivel = "Endeudamiento crítico"
+
+    return ratio, endeudamiento_total, estado, nivel
 
 
 #Funcion para calcular el historial crediticio (puede moficarse)
-def calificacionFinal(cliente):
-    print(f"funciona {cliente['DNI']} {cliente['nombre']}")
+def calificacionFinal(cliente, ratio, endeudamiento_total, estado, nivel):
+    print("--------------------------------")
+    print(f"DNI: {cliente['DNI']}")
+    print(f"Nombre: {cliente['nombre']}")
+    print(f"Deuda total: {endeudamiento_total}")
+    print(f"Ratio deuda/ingreso: {ratio:.2f}")
+    print(f"Estado: {estado}")
+    print(f"Nivel: {nivel}")
+    print("--------------------------------")
 
 
 
