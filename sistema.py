@@ -1,8 +1,11 @@
 # Lista de clientes a evaluar (BD)
 
 clientes = [
-    {"DNI": "12345678", "nombre": "Ana Pérez", "deudas": [200, 300, 150], "ingreso": 1500},
-    
+    {"DNI": "12345678", "nombre": "Ana Pérez", "deudas": [2000, 3000, 150], "ingreso": 1500},
+    {"DNI": "45149735", "nombre": "Karen Carcamo", "deudas": [500, 200, 100], "ingreso": 8000},
+    {"DNI": "07283014", "nombre": "Nancy Ortiz", "deudas": [500, 150, 300], "ingreso": 1130},
+    {"DNI": "75482652", "nombre": "Jorge Mendoza", "deudas": [800, 100, 100], "ingreso": 5000},
+    {"DNI": "78452446", "nombre": "Victor Fuentes", "deudas": [6500, 2000, 1000], "ingreso": 1800}
 ]
 
 
@@ -61,7 +64,7 @@ def consultarDNI():
             print("DNI inválido, intente nuevamente")      
 
 
-#PRUEBA DE DEUDAS Y ENTRADAS
+#CALCULO DE DEUDAS Y ENTRADAS
 def calculoFinal(cliente):
     endeudamiento_total = sum(cliente["deudas"])
     ratio = endeudamiento_total / cliente["ingreso"]
@@ -81,7 +84,7 @@ def calculoFinal(cliente):
     return ratio, endeudamiento_total, estado, nivel
 
 
-#Funcion para calcular el historial crediticio (puede moficarse)
+#Funcion para calcular el historial crediticio
 def calificacionFinal(cliente, ratio, endeudamiento_total, estado, nivel):
     print(f"DNI: {cliente['DNI']}")
     print(f"Nombre: {cliente['nombre']}")
