@@ -1,9 +1,13 @@
+# Lista de clientes a evaluar (BD)
+
 clientes = [
     {"DNI": "12345678", "nombre": "Ana Pérez", "historial": "Bueno", "clasificacion": "A"},
     {"DNI": "87654321", "nombre": "Juan Torres", "historial": "Regular", "clasificacion": "B"},
     {"DNI": "11112222", "nombre": "María López", "historial": "Malo", "clasificacion": "C"}
 ]
 
+
+# Menu de consulta al analista 
 
 def menuConsulta(personal):
     print(f"Bienvenido a la consulta {personal}")
@@ -35,11 +39,14 @@ def menuConsulta(personal):
         else:
             print("Opcion incorrecta, intente nuevamente")
 
+#Funcion de buscar cliente en la BD
 def buscarCliente(dni):
     for i in clientes:
         if i["DNI"] == dni:
             return i
     return None
+
+#Funcion para consultar si el DNI es válido o no existe en la BD
 def consultarDNI():
     while True:
         dniPersona = input("Ingrese el DNI de la persona a consultar: ")
@@ -53,9 +60,11 @@ def consultarDNI():
         else:
             print("DNI inválido, intente nuevamente")      
 
+#Funcion para calcular el historial crediticio (puede moficarse)
 def calcularHistorial(cliente):
     print(f"funciona {cliente['DNI']} {cliente['nombre']}")
 
+#Funcion para imprimir la clasificacion (puede modificarse)
 def imprimirClasificacion(cliente):
     print(f"funciona {cliente['DNI']} {cliente['nombre']}")
 
